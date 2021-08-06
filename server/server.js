@@ -4,11 +4,11 @@ const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const schema = require('./schema/schema');
+require('dotenv').config();
 
 const app = express();
-
 // Replace with your mongoLab URI
-const MONGO_URI = 'mongodb://Asmovic:Asmovic@first-cluster-shard-00-00.zvq2o.mongodb.net:27017,first-cluster-shard-00-01.zvq2o.mongodb.net:27017,first-cluster-shard-00-02.zvq2o.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-45mogz-shard-0&authSource=admin&retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
