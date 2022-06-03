@@ -23,7 +23,7 @@ class LyricList extends Component {
                 <li key={id} className="collection-item">{content}
                     <div className="vote-box">
                         <i className="material-icons" onClick={() => this.onLike(id, likes)}>thumb_up</i>
-                        {likes}
+                        <span class="new badge"> {likes} </span>
                     </div>
                 </li>
             )
